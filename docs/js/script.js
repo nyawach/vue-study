@@ -8741,7 +8741,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -9054,8 +9054,10 @@
 	      });
 	      return filteredPeople.sort(function (a, b) {
 	        var fullNameA = ('' + a.firstName + a.lastName).toLowerCase();
+	        var matchRateA = (0, _fuzzy_match_simple.fuzzy_match)(_this.searchText, fullNameA)[1];
 	        var fullNameB = ('' + b.firstName + b.lastName).toLowerCase();
-	        return (0, _fuzzy_match_simple.fuzzy_match)(_this.searchText, fullNameA)[1] > (0, _fuzzy_match_simple.fuzzy_match)(_this.searchText, fullNameB)[1];
+	        var matchRateB = (0, _fuzzy_match_simple.fuzzy_match)(_this.searchText, fullNameB)[1];
+	        return matchRateA > matchRateB;
 	      });
 	    }
 	  }

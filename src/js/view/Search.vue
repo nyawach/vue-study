@@ -32,8 +32,10 @@ export default {
       });
       return filteredPeople.sort((a,b) => {
         const fullNameA = `${a.firstName}${a.lastName}`.toLowerCase();
+        const matchRateA = fuzzy_match(this.searchText, fullNameA)[1];
         const fullNameB = `${b.firstName}${b.lastName}`.toLowerCase();
-        return fuzzy_match(this.searchText, fullNameA)[1] > fuzzy_match(this.searchText, fullNameB)[1];
+        const matchRateB = fuzzy_match(this.searchText, fullNameB)[1];
+        return matchRateA > matchRateB;
       });
     },
   },
