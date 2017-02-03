@@ -50,39 +50,23 @@
 
 	var _vue2 = _interopRequireDefault(_vue);
 
-	var _Search = __webpack_require__(2);
+	var _App = __webpack_require__(2);
 
-	var _Search2 = _interopRequireDefault(_Search);
+	var _App2 = _interopRequireDefault(_App);
+
+	var _GAS = __webpack_require__(9);
+
+	var _GAS2 = _interopRequireDefault(_GAS);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	new _vue2.default({
 	  el: "#app",
 	  components: {
-	    app: _Search2.default
+	    app: _App2.default,
+	    gas: _GAS2.default
 	  }
 	});
-
-	// import Todo from "./view/Todo.js";
-	//
-	// new Vue({
-	//   el: "#app",
-	//   components: { Todo },
-	//   template: `
-	//     <ul>
-	//       <todo v-for="todo, i in todoList" v-bind:no="todo.no" v-bind:title="todo.title" v-if="i >= 3"></todo>
-	//     </ul>
-	//   `,
-	//   data: {
-	//     todoList: [
-	//       { no: "1", title: "title1" },
-	//       { no: "2", title: "title2" },
-	//       { no: "3", title: "title3" },
-	//       { no: "4", title: "title4" },
-	//       { no: "5", title: "title5" },
-	//     ],
-	//   },
-	// })
 
 /***/ },
 /* 1 */
@@ -8673,7 +8657,7 @@
 	__vue_exports__ = __webpack_require__(7)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(9)
+	var __vue_template__ = __webpack_require__(8)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -8685,9 +8669,10 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/himeno-yusuke/Documents/private/websites/vuejs-study/src/js/view/Search.vue"
+	__vue_options__.__file = "/Users/himeno-yusuke/Documents/private/websites/vuejs-study/src/js/view/App.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+	__vue_options__._scopeId = "data-v-46912676"
 
 	/* hot reload */
 	if (false) {(function () {
@@ -8696,12 +8681,12 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-cd80e63a", __vue_options__)
+	    hotAPI.createRecord("data-v-46912676", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-cd80e63a", __vue_options__)
+	    hotAPI.reload("data-v-46912676", __vue_options__)
 	  }
 	})()}
-	if (__vue_options__.functional) {console.error("[vue-loader] Search.vue: functional components are not supported and should be defined in plain js files using render functions.")}
+	if (__vue_options__.functional) {console.error("[vue-loader] App.vue: functional components are not supported and should be defined in plain js files using render functions.")}
 
 	module.exports = __vue_exports__
 
@@ -8722,8 +8707,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-cd80e63a!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Search.vue", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-cd80e63a!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Search.vue");
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-46912676&scoped=true!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./App.vue", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-46912676&scoped=true!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./App.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -8741,7 +8726,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -9026,304 +9011,141 @@
 
 /***/ },
 /* 7 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-
-	var _fuzzy_match_simple = __webpack_require__(8);
-
-	exports.default = {
-	  data: function data() {
-	    return {
-	      people: [{ firstName: 'Naohiro', lastName: 'Nakajima' }, { firstName: 'Kazuhito', lastName: 'Hokamura' }, { firstName: 'Takeshi', lastName: 'Takatsudo' }, { firstName: 'Akihiro', lastName: 'Oyamada' }, { firstName: 'Kazunori', lastName: 'Tokuda' }, { firstName: 'Yukihisa', lastName: 'Yamada' }],
-	      searchText: ""
-	    };
-	  },
-	  methods: {},
-	  computed: {
-	    filteredPeople: function filteredPeople() {
-	      var _this = this;
-
-	      var filteredPeople = this.people.filter(function (person) {
-	        var fullName = ('' + person.firstName + person.lastName).toLowerCase();
-	        return (0, _fuzzy_match_simple.fuzzy_match)(_this.searchText, fullName)[0];
-	      });
-	      return filteredPeople.sort(function (a, b) {
-	        var fullNameA = ('' + a.firstName + a.lastName).toLowerCase();
-	        var matchRateA = (0, _fuzzy_match_simple.fuzzy_match)(_this.searchText, fullNameA)[1];
-	        var fullNameB = ('' + b.firstName + b.lastName).toLowerCase();
-	        var matchRateB = (0, _fuzzy_match_simple.fuzzy_match)(_this.searchText, fullNameB)[1];
-	        return matchRateA > matchRateB;
-	      });
-	    }
-	  }
-	};
+	exports.default = {};
 
 /***/ },
 /* 8 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	exports.fuzzy_match_simple = fuzzy_match_simple;
-	exports.fuzzy_match = fuzzy_match;
-	// LICENSE
-	//
-	//   This software is dual-licensed to the public domain and under the following
-	//   license: you are granted a perpetual, irrevocable license to copy, modify,
-	//   publish, and distribute this file as you see fit.
-
-	// VERSION 0.1.0
-
-	// Returns true if each character in pattern is found sequentially within str
-	function fuzzy_match_simple(pattern, str) {
-
-	    var patternIdx = 0;
-	    var strIdx = 0;
-	    var patternLength = pattern.length;
-	    var strLength = str.length;
-
-	    while (patternIdx != patternLength && strIdx != strLength) {
-	        var patternChar = pattern.charAt(patternIdx).toLowerCase();
-	        var strChar = str.charAt(strIdx).toLowerCase();
-	        if (patternChar == strChar) ++patternIdx;
-	        ++strIdx;
-	    }
-
-	    return patternLength != 0 && strLength != 0 && patternIdx == patternLength ? true : false;
-	}
-
-	// Returns [bool, score, formattedStr]
-	// bool: true if each character in pattern is found sequentially within str
-	// score: integer; higher is better match. Value has no intrinsic meaning. Range varies with pattern.
-	//        Can only compare scores with same search pattern.
-	// formattedStr: input str with matched characters marked in <b> tags. Delete if unwanted.
-	function fuzzy_match(pattern, str) {
-
-	    // Score consts
-	    var adjacency_bonus = 5; // bonus for adjacent matches
-	    var separator_bonus = 10; // bonus if match occurs after a separator
-	    var camel_bonus = 10; // bonus if match is uppercase and prev is lower
-	    var leading_letter_penalty = -3; // penalty applied for every letter in str before the first match
-	    var max_leading_letter_penalty = -9; // maximum penalty for leading letters
-	    var unmatched_letter_penalty = -1; // penalty for every letter that doesn't matter
-
-	    // Loop variables
-	    var score = 0;
-	    var patternIdx = 0;
-	    var patternLength = pattern.length;
-	    var strIdx = 0;
-	    var strLength = str.length;
-	    var prevMatched = false;
-	    var prevLower = false;
-	    var prevSeparator = true; // true so if first letter match gets separator bonus
-
-	    // Use "best" matched letter if multiple string letters match the pattern
-	    var bestLetter = null;
-	    var bestLower = null;
-	    var bestLetterIdx = null;
-	    var bestLetterScore = 0;
-
-	    var matchedIndices = [];
-
-	    // Loop over strings
-	    while (strIdx != strLength) {
-	        var patternChar = patternIdx != patternLength ? pattern.charAt(patternIdx) : null;
-	        var strChar = str.charAt(strIdx);
-
-	        var patternLower = patternChar != null ? patternChar.toLowerCase() : null;
-	        var strLower = strChar.toLowerCase();
-	        var strUpper = strChar.toUpperCase();
-
-	        var nextMatch = patternChar && patternLower == strLower;
-	        var rematch = bestLetter && bestLower == strLower;
-
-	        var advanced = nextMatch && bestLetter;
-	        var patternRepeat = bestLetter && patternChar && bestLower == patternLower;
-	        if (advanced || patternRepeat) {
-	            score += bestLetterScore;
-	            matchedIndices.push(bestLetterIdx);
-	            bestLetter = null;
-	            bestLower = null;
-	            bestLetterIdx = null;
-	            bestLetterScore = 0;
-	        }
-
-	        if (nextMatch || rematch) {
-	            var newScore = 0;
-
-	            // Apply penalty for each letter before the first pattern match
-	            // Note: std::max because penalties are negative values. So max is smallest penalty.
-	            if (patternIdx == 0) {
-	                var penalty = Math.max(strIdx * leading_letter_penalty, max_leading_letter_penalty);
-	                score += penalty;
-	            }
-
-	            // Apply bonus for consecutive bonuses
-	            if (prevMatched) newScore += adjacency_bonus;
-
-	            // Apply bonus for matches after a separator
-	            if (prevSeparator) newScore += separator_bonus;
-
-	            // Apply bonus across camel case boundaries. Includes "clever" isLetter check.
-	            if (prevLower && strChar == strUpper && strLower != strUpper) newScore += camel_bonus;
-
-	            // Update patter index IFF the next pattern letter was matched
-	            if (nextMatch) ++patternIdx;
-
-	            // Update best letter in str which may be for a "next" letter or a "rematch"
-	            if (newScore >= bestLetterScore) {
-
-	                // Apply penalty for now skipped letter
-	                if (bestLetter != null) score += unmatched_letter_penalty;
-
-	                bestLetter = strChar;
-	                bestLower = bestLetter.toLowerCase();
-	                bestLetterIdx = strIdx;
-	                bestLetterScore = newScore;
-	            }
-
-	            prevMatched = true;
-	        } else {
-	            // Append unmatch characters
-	            formattedStr += strChar;
-
-	            score += unmatched_letter_penalty;
-	            prevMatched = false;
-	        }
-
-	        // Includes "clever" isLetter check.
-	        prevLower = strChar == strLower && strLower != strUpper;
-	        prevSeparator = strChar == '_' || strChar == ' ';
-
-	        ++strIdx;
-	    }
-
-	    // Apply score for last match
-	    if (bestLetter) {
-	        score += bestLetterScore;
-	        matchedIndices.push(bestLetterIdx);
-	    }
-
-	    // Finish out formatted string after last pattern matched
-	    // Build formated string based on matched letters
-	    var formattedStr = "";
-	    var lastIdx = 0;
-	    for (var i = 0; i < matchedIndices.length; ++i) {
-	        var idx = matchedIndices[i];
-	        formattedStr += str.substr(lastIdx, idx - lastIdx) + "<b>" + str.charAt(idx) + "</b>";
-	        lastIdx = idx + 1;
-	    }
-	    formattedStr += str.substr(lastIdx, str.length - lastIdx);
-
-	    var matched = patternIdx == patternLength;
-	    return [matched, score, formattedStr];
-	}
-
-	// Strictly optional utility to help make using fts_fuzzy_match easier for large data sets
-	// Uses setTimeout to process matches before a maximum amount of time before sleeping
-	//
-	// To use:
-	//      var asyncMatcher = new fts_fuzzy_match(fuzzy_match, "fts", "ForrestTheWoods",
-	//                                              function(results) { console.log(results); });
-	//      asyncMatcher.start();
-	//
-	function fts_fuzzy_match_async(matchFn, pattern, dataSet, onComplete) {
-	    var ITEMS_PER_CHECK = 1000; // performance.now can be very slow depending on platform
-
-	    var max_ms_per_frame = 1000.0 / 30.0; // 30FPS
-	    var dataIndex = 0;
-	    var results = [];
-	    var resumeTimeout = null;
-
-	    // Perform matches for at most max_ms
-	    function step() {
-	        clearTimeout(resumeTimeout);
-	        resumeTimeout = null;
-
-	        var stopTime = performance.now() + max_ms_per_frame;
-
-	        for (; dataIndex < dataSet.length; ++dataIndex) {
-	            if (dataIndex % ITEMS_PER_CHECK == 0) {
-	                if (performance.now() > stopTime) {
-	                    resumeTimeout = setTimeout(step, 1);
-	                    return;
-	                }
-	            }
-
-	            var str = dataSet[dataIndex];
-	            var result = matchFn(pattern, str);
-
-	            // A little gross because fuzzy_match_simple and fuzzy_match return different things
-	            if (matchFn == fuzzy_match_simple && result == true) results.push(str);else if (matchFn == fuzzy_match && result[0] == true) results.push(result);
-	        }
-
-	        onComplete(results);
-	        return null;
-	    };
-
-	    // Abort current process
-	    this.cancel = function () {
-	        if (resumeTimeout !== null) clearTimeout(resumeTimeout);
-	    };
-
-	    // Must be called to start matching.
-	    // I tried to make asyncMatcher auto-start via "var resumeTimeout = step();"
-	    // However setTimout behaving in an unexpected fashion as onComplete insisted on triggering twice.
-	    this.start = function () {
-	        step();
-	    };
-
-	    // Process full list. Blocks script execution until complete
-	    this.flush = function () {
-	        max_ms_per_frame = Infinity;
-	        step();
-	    };
-	};
-
-/***/ },
-/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', {
-	    staticClass: "search"
-	  }, [_c('input', {
-	    directives: [{
-	      name: "model",
-	      rawName: "v-model",
-	      value: (_vm.searchText),
-	      expression: "searchText"
-	    }],
-	    attrs: {
-	      "type": "search",
-	      "placeholder": "Search"
-	    },
-	    domProps: {
-	      "value": _vm._s(_vm.searchText)
-	    },
-	    on: {
-	      "input": function($event) {
-	        if ($event.target.composing) { return; }
-	        _vm.searchText = $event.target.value
-	      }
-	    }
-	  }), _c('ul', _vm._l((_vm.filteredPeople), function(person) {
-	    return _c('li', [_vm._v(_vm._s(person.firstName) + " " + _vm._s(person.lastName))])
-	  }))])
+	  return _c("div")
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-cd80e63a", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-46912676", module.exports)
+	  }
+	}
+
+/***/ },
+/* 9 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_exports__, __vue_options__
+	var __vue_styles__ = {}
+
+	/* styles */
+	__webpack_require__(10)
+
+	/* script */
+	__vue_exports__ = __webpack_require__(12)
+
+	/* template */
+	var __vue_template__ = __webpack_require__(13)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
+	}
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.__file = "/Users/himeno-yusuke/Documents/private/websites/vuejs-study/src/js/view/GAS.vue"
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+	__vue_options__._scopeId = "data-v-322a1b2e"
+
+	/* hot reload */
+	if (false) {(function () {
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  module.hot.accept()
+	  if (!module.hot.data) {
+	    hotAPI.createRecord("data-v-322a1b2e", __vue_options__)
+	  } else {
+	    hotAPI.reload("data-v-322a1b2e", __vue_options__)
+	  }
+	})()}
+	if (__vue_options__.functional) {console.error("[vue-loader] GAS.vue: functional components are not supported and should be defined in plain js files using render functions.")}
+
+	module.exports = __vue_exports__
+
+
+/***/ },
+/* 10 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(11);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(6)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-322a1b2e&scoped=true!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./GAS.vue", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-322a1b2e&scoped=true!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./GAS.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 11 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(5)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 12 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = {};
+
+/***/ },
+/* 13 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c("div")
+	},staticRenderFns: []}
+	module.exports.render._withStripped = true
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-hot-reload-api").rerender("data-v-322a1b2e", module.exports)
 	  }
 	}
 

@@ -1,0 +1,19 @@
+// reset css
+@import 'node_modules/reset.css/reset.css';
+
+// config
+@import 'variable', 'function', 'mixin', 'keyframes';
+
+// modules
+@import 'module/*';
+
+
+.app__description {
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 1080px;
+  padding: 40px;
+  h1 {
+    font-weight: bold;
+  }
+}
