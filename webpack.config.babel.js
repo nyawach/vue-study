@@ -1,6 +1,6 @@
 module.exports = {
   output: {
-    publicPath: "./docs/js/",
+    publicPath: "./public/js/",
     filename: "script.js"
   },
 
