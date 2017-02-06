@@ -34,7 +34,7 @@
 /******/ 	__webpack_require__.c = installedModules;
 
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "./docs/js/";
+/******/ 	__webpack_require__.p = "./public/js/";
 
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
@@ -54,17 +54,12 @@
 
 	var _App2 = _interopRequireDefault(_App);
 
-	var _GAS = __webpack_require__(9);
-
-	var _GAS2 = _interopRequireDefault(_GAS);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	new _vue2.default({
 	  el: "#app",
 	  components: {
-	    app: _App2.default,
-	    gas: _GAS2.default
+	    app: _App2.default
 	  }
 	});
 
@@ -8657,7 +8652,7 @@
 	__vue_exports__ = __webpack_require__(7)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(8)
+	var __vue_template__ = __webpack_require__(9)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -8726,7 +8721,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -9011,141 +9006,176 @@
 
 /***/ },
 /* 7 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.default = {};
+	exports.default = {
+	  data: function data() {
+	    return {
+	      userList: __webpack_require__(8),
+	      sortColumnName: "id",
+	      sortType: "asc"
+	    };
+	  },
+
+	  methods: {
+	    toggleSort: function toggleSort(colName) {
+	      if (this.sortType === "asc") {
+	        this.userList = this.userList.sort(function (a, b) {
+	          return b[colName] - a[colName];
+	        });
+	        this.sortType = "desc";
+	      } else {
+	        this.userList = this.userList.sort(function (a, b) {
+	          return a[colName] - b[colName];
+	        });
+	        this.sortType = "asc";
+	      }
+	      this.sortColumnName = colName;
+	    }
+	  }
+	};
 
 /***/ },
 /* 8 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	module.exports = [{
+	  id: 2,
+	  name: "山田太郎",
+	  age: 20,
+	  user_name: "yamata2",
+	  created_at: new Date("2016/4/5"),
+	  updated_at: new Date("2016/4/9")
+	}, {
+	  id: 3,
+	  name: "山田太",
+	  age: 24,
+	  user_name: "yamata1",
+	  created_at: new Date("2016/12/5"),
+	  updated_at: new Date("2016/3/9")
+	}, {
+	  id: 1,
+	  name: "田太郎",
+	  age: 10,
+	  user_name: "yamata4",
+	  created_at: new Date("2016/2/5"),
+	  updated_at: new Date("2016/4/9")
+	}, {
+	  id: 5,
+	  name: "山田郎",
+	  age: 39,
+	  user_name: "yamata76",
+	  created_at: new Date("2016/4/5"),
+	  updated_at: new Date("2016/4/9")
+	}, {
+	  id: 4,
+	  name: "山郎",
+	  age: 20,
+	  user_name: "yamata112",
+	  created_at: new Date("2016/4/5"),
+	  updated_at: new Date("2016/4/23")
+	}, {
+	  id: 6,
+	  name: "山",
+	  age: 11,
+	  user_name: "yama22ta",
+	  created_at: new Date("2016/4/1"),
+	  updated_at: new Date("2016/7/9")
+	}];
+
+/***/ },
+/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c("div")
+	  return _c('table', {
+	    staticClass: "app"
+	  }, [_c('tr', {
+	    attrs: {
+	      "data-sort": _vm.sortColumnName
+	    }
+	  }, [_c('th', {
+	    attrs: {
+	      "data-sort-type": _vm.sortColumnName === 'id' ? _vm.sortType : false
+	    },
+	    on: {
+	      "click": function($event) {
+	        _vm.toggleSort('id')
+	      }
+	    }
+	  }, [_vm._v("id")]), _c('th', {
+	    attrs: {
+	      "data-sort-type": _vm.sortColumnName === 'name' ? _vm.sortType : false
+	    },
+	    on: {
+	      "click": function($event) {
+	        _vm.toggleSort('name')
+	      }
+	    }
+	  }, [_vm._v("name")]), _c('th', {
+	    attrs: {
+	      "data-sort-type": _vm.sortColumnName === 'user_name' ? _vm.sortType : false
+	    },
+	    on: {
+	      "click": function($event) {
+	        _vm.toggleSort('user_name')
+	      }
+	    }
+	  }, [_vm._v("user name")]), _c('th', {
+	    attrs: {
+	      "data-sort-type": _vm.sortColumnName === 'age' ? _vm.sortType : false
+	    },
+	    on: {
+	      "click": function($event) {
+	        _vm.toggleSort('age')
+	      }
+	    }
+	  }, [_vm._v("age")]), _c('th', {
+	    attrs: {
+	      "data-sort-type": _vm.sortColumnName === 'created_at' ? _vm.sortType : false
+	    },
+	    on: {
+	      "click": function($event) {
+	        _vm.toggleSort('created_at')
+	      }
+	    }
+	  }, [_vm._v("created_at")]), _c('th', {
+	    attrs: {
+	      "data-sort-type": _vm.sortColumnName === 'updated_at' ? _vm.sortType : false
+	    },
+	    on: {
+	      "click": function($event) {
+	        _vm.toggleSort('updated_at')
+	      }
+	    }
+	  }, [_vm._v("updated_at")])]), _vm._l((_vm.userList), function(user) {
+	    return _c('tr', [_c('td', {
+	      staticClass: "user__id"
+	    }, [_vm._v(_vm._s(user.id))]), _c('td', {
+	      staticClass: "user__name"
+	    }, [_vm._v(_vm._s(user.name))]), _c('td', {
+	      staticClass: "user__user-name"
+	    }, [_vm._v(_vm._s(user.user_name))]), _c('td', {
+	      staticClass: "user__age"
+	    }, [_vm._v(_vm._s(user.age))]), _c('td', {
+	      staticClass: "user__created-at"
+	    }, [_vm._v(_vm._s(user.created_at))]), _c('td', {
+	      staticClass: "user__updated-at"
+	    }, [_vm._v(_vm._s(user.updated_at))])])
+	  })], 2)
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
 	     require("vue-hot-reload-api").rerender("data-v-46912676", module.exports)
-	  }
-	}
-
-/***/ },
-/* 9 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __vue_exports__, __vue_options__
-	var __vue_styles__ = {}
-
-	/* styles */
-	__webpack_require__(10)
-
-	/* script */
-	__vue_exports__ = __webpack_require__(12)
-
-	/* template */
-	var __vue_template__ = __webpack_require__(13)
-	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-	if (
-	  typeof __vue_exports__.default === "object" ||
-	  typeof __vue_exports__.default === "function"
-	) {
-	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
-	__vue_options__ = __vue_exports__ = __vue_exports__.default
-	}
-	if (typeof __vue_options__ === "function") {
-	  __vue_options__ = __vue_options__.options
-	}
-	__vue_options__.__file = "/Users/himeno-yusuke/Documents/private/websites/vuejs-study/src/js/view/GAS.vue"
-	__vue_options__.render = __vue_template__.render
-	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-322a1b2e"
-
-	/* hot reload */
-	if (false) {(function () {
-	  var hotAPI = require("vue-hot-reload-api")
-	  hotAPI.install(require("vue"), false)
-	  if (!hotAPI.compatible) return
-	  module.hot.accept()
-	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-322a1b2e", __vue_options__)
-	  } else {
-	    hotAPI.reload("data-v-322a1b2e", __vue_options__)
-	  }
-	})()}
-	if (__vue_options__.functional) {console.error("[vue-loader] GAS.vue: functional components are not supported and should be defined in plain js files using render functions.")}
-
-	module.exports = __vue_exports__
-
-
-/***/ },
-/* 10 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(11);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(6)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-322a1b2e&scoped=true!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./GAS.vue", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-322a1b2e&scoped=true!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./GAS.vue");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 11 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(5)();
-	// imports
-
-
-	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n", ""]);
-
-	// exports
-
-
-/***/ },
-/* 12 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = {};
-
-/***/ },
-/* 13 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c("div")
-	},staticRenderFns: []}
-	module.exports.render._withStripped = true
-	if (false) {
-	  module.hot.accept()
-	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-322a1b2e", module.exports)
 	  }
 	}
 
