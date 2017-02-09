@@ -8718,10 +8718,10 @@
 
 	exports = module.exports = __webpack_require__(5)();
 	// imports
-
+	exports.push([module.id, "@import url(https://cdn.jsdelivr.net/musubii/1.2.0/css/musubii.min.css);", ""]);
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\nth[data-v-46912676]:hover {\n}\n", ""]);
 
 	// exports
 
@@ -9026,12 +9026,14 @@
 	    toggleSort: function toggleSort(colName) {
 	      if (this.sortType === "asc") {
 	        this.userList = this.userList.sort(function (a, b) {
-	          return b[colName] - a[colName];
+	          if (b[colName] > a[colName]) return 1;else if (b[colName] < a[colName]) return -1;
+	          if (b[colName].length > a[colName].length) return 1;else if (b[colName].length < a[colName].length) return -1;
 	        });
 	        this.sortType = "desc";
 	      } else {
 	        this.userList = this.userList.sort(function (a, b) {
-	          return a[colName] - b[colName];
+	          if (b[colName] > a[colName]) return -1;else if (b[colName] < a[colName]) return 1;
+	          if (b[colName].length > a[colName].length) return -1;else if (b[colName].length < a[colName].length) return 1;
 	        });
 	        this.sortType = "asc";
 	      }
@@ -9096,8 +9098,11 @@
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('table', {
-	    staticClass: "app"
+	    staticClass: "table is-middle is-outline is-stripe"
+	  }, [_c('thead', {
+	    staticClass: "box is-paint-9"
 	  }, [_c('tr', {
+	    staticClass: "is-left",
 	    attrs: {
 	      "data-sort": _vm.sortColumnName
 	    }
@@ -9155,7 +9160,7 @@
 	        _vm.toggleSort('updated_at')
 	      }
 	    }
-	  }, [_vm._v("updated_at")])]), _vm._l((_vm.userList), function(user) {
+	  }, [_vm._v("updated_at")])])]), _c('tbody', _vm._l((_vm.userList), function(user) {
 	    return _c('tr', [_c('td', {
 	      staticClass: "user__id"
 	    }, [_vm._v(_vm._s(user.id))]), _c('td', {
@@ -9169,7 +9174,7 @@
 	    }, [_vm._v(_vm._s(user.created_at))]), _c('td', {
 	      staticClass: "user__updated-at"
 	    }, [_vm._v(_vm._s(user.updated_at))])])
-	  })], 2)
+	  }))])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {
