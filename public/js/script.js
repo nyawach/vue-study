@@ -8721,7 +8721,7 @@
 	exports.push([module.id, "@import url(https://cdn.jsdelivr.net/musubii/1.2.0/css/musubii.min.css);", ""]);
 
 	// module
-	exports.push([module.id, "\nth[data-v-46912676]:hover {\n}\n", ""]);
+	exports.push([module.id, "\nth[data-v-46912676] {\n  position: relative;\n}\nth[data-v-46912676]:hover {\n  background-color: #09795d;\n}\nth[data-v-46912676]:after {\n  position: absolute;\n  display: block;\n  right: 10px;\n  top: 50%;\n  -webkit-transform: translateY(-50%);\n          transform: translateY(-50%);\n}\nth[data-sort-type=\"asc\"][data-v-46912676]:after {\n  content: \"\\2193\";\n}\nth[data-sort-type=\"desc\"][data-v-46912676]:after {\n  content: \"\\2191\";\n}\n", ""]);
 
 	// exports
 
@@ -9023,21 +9023,29 @@
 	  },
 
 	  methods: {
-	    toggleSort: function toggleSort(colName) {
-	      if (this.sortType === "asc") {
-	        this.userList = this.userList.sort(function (a, b) {
-	          if (b[colName] > a[colName]) return 1;else if (b[colName] < a[colName]) return -1;
-	          if (b[colName].length > a[colName].length) return 1;else if (b[colName].length < a[colName].length) return -1;
-	        });
-	        this.sortType = "desc";
-	      } else {
-	        this.userList = this.userList.sort(function (a, b) {
-	          if (b[colName] > a[colName]) return -1;else if (b[colName] < a[colName]) return 1;
-	          if (b[colName].length > a[colName].length) return -1;else if (b[colName].length < a[colName].length) return 1;
-	        });
-	        this.sortType = "asc";
+	    toggleSort: function toggleSort(colName, evt) {
+	      var isOtherSortType = !evt.currentTarget.getAttribute("data-sort-type");
+	      if (isOtherSortType) {
+	        this.sortAscBy(colName);
+	        this.sortColumnName = colName;
+	        return;
 	      }
+	      if (this.sortType === "asc") this.sortAscBy(colName);else this.sortDescBy(colName);
 	      this.sortColumnName = colName;
+	    },
+	    sortAscBy: function sortAscBy(colName) {
+	      this.userList = this.userList.sort(function (a, b) {
+	        if (b[colName] > a[colName]) return 1;else if (b[colName] < a[colName]) return -1;
+	        if (b[colName].length > a[colName].length) return 1;else if (b[colName].length < a[colName].length) return -1;
+	      });
+	      this.sortType = "desc";
+	    },
+	    sortDescBy: function sortDescBy(colName) {
+	      this.userList = this.userList.sort(function (a, b) {
+	        if (b[colName] > a[colName]) return -1;else if (b[colName] < a[colName]) return 1;
+	        if (b[colName].length > a[colName].length) return -1;else if (b[colName].length < a[colName].length) return 1;
+	      });
+	      this.sortType = "asc";
 	    }
 	  }
 	};
@@ -9112,7 +9120,7 @@
 	    },
 	    on: {
 	      "click": function($event) {
-	        _vm.toggleSort('id')
+	        _vm.toggleSort('id', $event)
 	      }
 	    }
 	  }, [_vm._v("id")]), _c('th', {
@@ -9121,7 +9129,7 @@
 	    },
 	    on: {
 	      "click": function($event) {
-	        _vm.toggleSort('name')
+	        _vm.toggleSort('name', $event)
 	      }
 	    }
 	  }, [_vm._v("name")]), _c('th', {
@@ -9130,7 +9138,7 @@
 	    },
 	    on: {
 	      "click": function($event) {
-	        _vm.toggleSort('user_name')
+	        _vm.toggleSort('user_name', $event)
 	      }
 	    }
 	  }, [_vm._v("user name")]), _c('th', {
@@ -9139,7 +9147,7 @@
 	    },
 	    on: {
 	      "click": function($event) {
-	        _vm.toggleSort('age')
+	        _vm.toggleSort('age', $event)
 	      }
 	    }
 	  }, [_vm._v("age")]), _c('th', {
@@ -9148,7 +9156,7 @@
 	    },
 	    on: {
 	      "click": function($event) {
-	        _vm.toggleSort('created_at')
+	        _vm.toggleSort('created_at', $event)
 	      }
 	    }
 	  }, [_vm._v("created_at")]), _c('th', {
@@ -9157,7 +9165,7 @@
 	    },
 	    on: {
 	      "click": function($event) {
-	        _vm.toggleSort('updated_at')
+	        _vm.toggleSort('updated_at', $event)
 	      }
 	    }
 	  }, [_vm._v("updated_at")])])]), _c('tbody', _vm._l((_vm.userList), function(user) {
