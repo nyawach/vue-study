@@ -8721,7 +8721,7 @@
 	exports.push([module.id, "@import url(https://cdn.jsdelivr.net/musubii/1.2.0/css/musubii.min.css);", ""]);
 
 	// module
-	exports.push([module.id, "\nth[data-v-46912676] {\n  position: relative;\n}\nth[data-v-46912676]:hover {\n  background-color: #09795d;\n}\nth[data-v-46912676]:after {\n  position: absolute;\n  display: block;\n  right: 10px;\n  top: 50%;\n  -webkit-transform: translateY(-50%);\n          transform: translateY(-50%);\n}\nth[data-sort-type=\"asc\"][data-v-46912676]:after {\n  content: \"\\2193\";\n}\nth[data-sort-type=\"desc\"][data-v-46912676]:after {\n  content: \"\\2191\";\n}\n", ""]);
+	exports.push([module.id, "\nth[data-v-46912676] {\n  position: relative;\n}\nth[data-v-46912676]:hover {\n  background-color: #09795d;\n}\nth[data-v-46912676]:after {\n  position: absolute;\n  display: block;\n  right: 10px;\n  top: 50%;\n  -webkit-transform: translateY(-50%);\n          transform: translateY(-50%);\n}\nth[data-sort-type][data-v-46912676] {\n  background-color: #09795d;\n}\nth[data-sort-type=\"asc\"][data-v-46912676]:after {\n  content: \"\\2193\";\n}\nth[data-sort-type=\"desc\"][data-v-46912676]:after {\n  content: \"\\2191\";\n}\n", ""]);
 
 	// exports
 

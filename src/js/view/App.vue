@@ -77,6 +77,9 @@ export default {
       top: 50%;
       transform: translateY(-50%);
     }
+    &[data-sort-type] {
+      background-color: #09795d;
+    }
     &[data-sort-type="asc"]:after {
       content: "↓";
     }
