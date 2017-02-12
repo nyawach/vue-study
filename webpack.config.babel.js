@@ -18,6 +18,14 @@ module.exports = {
         test: /\.vue$/,
         loader: "vue-loader",
       },
+      {
+        test: /\.json$/,
+        loader: "json-loader",
+      },
+      {
+        test: /\.css$/,
+        loader: "css-loader",
+      }
     ]
   },
 

@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "start": "gulp",
-    "webpack": "webpack"
+    "webpack": "webpack --display-error-details"
   },
   "devDependencies": {
     "autoprefixer": "^6.6.1",
@@ -40,11 +40,17 @@
     "webpack": "^1.14.0"
   },
   "dependencies": {
+    "css-loader": "^0.26.1",
     "gulp-pleeease": "^2.0.2",
     "gulp-sass": "^3.1.0",
     "gulp-sass-glob": "^1.0.8",
+    "highlightjs": "^9.8.0",
     "jquery": "^3.0.0",
+    "json-loader": "^0.5.4",
+    "linkifyjs": "^2.1.4",
     "lodash": "^4.17.4",
+    "markdown-it": "^8.2.2",
+    "markdown-it-link-attributes": "^1.0.0",
     "reset.css": "^2.0.2",
     "vue": "^2.1.10",
     "vue-router": "^2.1.3",

@@ -1,11 +1,9 @@
 import Vue from "vue";
-import App from "./view/App";
-import GAS from "./view/GAS";
+import Markdown from "./view/Markdown/index";
 
 new Vue({
-  el: "#app",
+  el: ".wrapper",
   components: {
-    app: App,
-    gas: GAS,
+    markdown: Markdown,
   },
 });
